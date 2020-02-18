@@ -1,0 +1,17 @@
+
+<div class="container p-1">
+
+    <form (ngSubmit)="obtainVolumen(form)" [formGroup]="form">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Id</label>
+          <input type="text" class="form-control" formControlName="volumen" name="volumen" >
+        </div>
+        <button type="submit" class="btn btn-primary float-right">Calcular</button>
+    
+      </form>
+      <div class="card" style="width: 20rem;">
+        <div class="card-header" >->
+          <label *ngIf="this.volumen.volumen!=''" id="volumen">Volumen: "{{this.volumen.volumen}}"</label>
+        </div>
+      </div>
+      </div>
