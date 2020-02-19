@@ -17,6 +17,7 @@ Se detallan las instrucciones utilizando Spring Tool Suite 4.
 Ojo: Si por alguna razón el IDE no levanta el servidor de la base de datos, levantar según el sistema operativo.
 ## Frontend
 Para el Frontend no encontré necesario la creación de rutas por el tamaño de la prueba. Se crearon dos componentes que disponen de los formularios solicitados (form y volumen) los cuales se conectan con el backend mediante un servicio llamado BackendService, esto fue así debido a que de esta manera si existen cambios en el backend solo se debe editar el servicio, centralizando la conexión con la api.
+En caso de excepciones por parte del servidor, solo se informará al usuario en la utilización del método GET mediante una alerta, mientras que para el POST no considere aplicar medidas debido a que no se pueden ingresar valores no permitidos en el formulario.
 
 
 ### Instrucciones
