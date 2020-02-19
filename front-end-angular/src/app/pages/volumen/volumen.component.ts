@@ -21,7 +21,8 @@ export class VolumenComponent implements OnInit {
     if (form.valid){
       console.log(form.value.volumen,"QUE PASA")
       this.backendService.volumen(form.value.volumen)
-      .then((result:any)=>{
+      .subscribe((result:any)=>{
+        console.log(result,"PAPITOchulo")
         this.volumen=result
       })
     }else alert("Llene todos los campos")

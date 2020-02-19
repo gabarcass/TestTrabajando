@@ -1,8 +1,7 @@
 package com.trabajando.backend.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.mongodb.BasicDBObject;
 import com.trabajando.backend.model.Cube;
@@ -32,21 +32,20 @@ public class CubeRestController {
 			BasicDBObject vol = new BasicDBObject("volumen", volumen);
 			return vol;
 		} catch (Exception e) {
-			BasicDBObject vol = new BasicDBObject("volumen", "");
-			return vol;
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Id no encontrada en la base de datos", e);
+
 		}
 
 	}
 
 	@PostMapping(value = "/")
-	public BasicDBObject save(@Valid @RequestBody Cube cube) {
+	public BasicDBObject save(@RequestBody Cube cube) {
 		try {
 			cube.setDate(java.time.LocalDate.now());
 			BasicDBObject id = new BasicDBObject("id", cubeRepository.save(cube).get_id());
 			return id;
 		} catch (Exception e) {
-			BasicDBObject vol = new BasicDBObject("id", "");
-			return vol;
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
 		}
 
 	}
