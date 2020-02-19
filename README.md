@@ -1,7 +1,7 @@
 # Prueba trabajando.com
 ## Tecnologías utilizadas
 La prueba fue realizada en sistema operativo Windows 10 y se utilizo:
- - Spring Tool Suit 4 para el backend (puerto 8081).
+ - Spring Tool Suite 4 para el backend (puerto 8081).
  - Angular Cli versión 9.0.1 (puerto 8080).
  - Mongodb (puerto 27017)
 
@@ -10,7 +10,7 @@ El desarrollo del Backend fue el que me tomó más tiempo debido a que tuve que 
 ### Instrucciones
 Se detallan las instrucciones utilizando Spring Tool Suite 4.
 - Clonar repositorio.
-- Abrir Spring Tool Suit 4 y agregar la carpeta backend al workspace.
+- Abrir Spring Tool Suite 4 y agregar la carpeta backend al workspace.
 	> En caso de ser otro IDE reunir los requisitos de cada uno para el uso de Springboot.
 - Finalmente presionar en compilar.
 
